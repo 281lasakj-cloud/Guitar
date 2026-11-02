@@ -4,35 +4,50 @@
  * @author  
  * @version 
  */
+
 public class RingBuffer 
 {
+    double[] array;
+    int front;
+    int rear;
+    int size;
 
     public RingBuffer(int capacity)
     {
+        array = new double[capacity];
+        front = 0;
+        rear = 0;
+        size = 0;
     }
 
     public int size()
     {
-        return 0;
+        return size;
     }
     
     public boolean isEmpty()
     {
-        return false;
+        return size == 0;
     }
     
     public boolean isFull()
     {
-        return true;
+        return size == array.length;
     }
     
     public void add(double value)
     {
+        if(array.isFull()){
+            throw new InvalidActionException("No");
+        }
+        array[rear] = value;
+        rear
+        size++;
     }
     
     public double peek()
     {
-        return 0.0;
+        return array[front];
     }
     
     public double remove()
