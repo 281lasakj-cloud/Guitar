@@ -12,7 +12,7 @@ public class GuitarSimulatorLite
     {
         // Create two guitar strings, for concert A and C
         double CONCERT_A = 440.0;
-        doubleA CONCERT_C = CONCERT_A * Math.pow(2, 3.0/12.0);
+        double CONCERT_C = CONCERT_A * Math.pow(2, 3.0/12.0);
         GuitarString stringA = new GuitarString(CONCERT_A);
         GuitarString stringC = new GuitarString(CONCERT_C);
 
@@ -22,7 +22,7 @@ public class GuitarSimulatorLite
             // check if the user has typed a key, and, if so, process it
             if (StdDraw.hasNextKeyTyped()) 
             {
-                // the user types this character
+                // the user types this characteraaaaa
                 char key = StdDraw.nextKeyTyped();
 
                 // pluck the corresponding string

@@ -11,7 +11,7 @@ public class GuitarString
 
     public GuitarString(double frequency) 
     {
-        int cap = (int) Math.round(41400/ frequency);
+        int cap = (int) Math.round(44100/ frequency);
 
         buf = new RingBuffer(cap);
         time = 0;
@@ -38,13 +38,17 @@ public class GuitarString
             buf.remove();
         }
 
-        int capacity = (int)(41400/440.0);
+        int capacity = (int)(44100/440.0);
 
-        for (int i = 0; i < capacity; i++)
-        {
-            double randomValue = Math.random() - 0.5;
-            buf.add(randomValue);
+        while(true){
+            try{
+                double randomValue = Math.random() - 0.5;
+                buf.add(randomValue);
+            }catch (InvalidActionException e){
+                break;
+            }
         }
+            
     }
 
     // advance the simulation one time step
