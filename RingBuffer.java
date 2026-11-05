@@ -37,22 +37,33 @@ public class RingBuffer
     
     public void add(double value)
     {
-        if(array.isFull()){
+        if(isFull()){
             throw new InvalidActionException("No");
         }
         array[rear] = value;
-        rear
+        rear = (rear + 1) % array.length;
         size++;
     }
     
     public double peek()
     {
+        if(isEmpty())
+        {
+            throw new InvalidActionException("Nope");
+        }
         return array[front];
     }
     
     public double remove()
     {
-        return 0.0;
+        if(isEmpty())
+        {
+            throw new InvalidActionException("Nup");
+        }
+        double value = array[front];
+        front = (front + 1) % array.length;
+        size--;
+        return value;
     }
     
     // a simple test of the constructor and methods in RingBuffer
