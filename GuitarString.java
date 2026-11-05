@@ -38,12 +38,13 @@ public class GuitarString
             buf.remove();
         }
 
-        int capacity = (int)(41400/440.0);
-
-        for (int i = 0; i < capacity; i++)
-        {
-            double randomValue = Math.random() - 0.5;
-            buf.add(randomValue);
+        while(true){
+            try{
+                double randomValue = Math.random() - 0.5;
+                buf.add(randomValue);
+            }catch (InvalidActionException e){
+                break;
+            }
         }
     }
 
