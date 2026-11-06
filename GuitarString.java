@@ -11,7 +11,7 @@ public class GuitarString
 
     public GuitarString(double frequency) 
     {
-        int cap = (int) Math.round(41400/ frequency);
+        int cap = (int) Math.round(44100/ frequency);
 
         buf = new RingBuffer(cap);
         time = 0;
@@ -46,6 +46,7 @@ public class GuitarString
                 break;
             }
         }
+
     }
 
     // advance the simulation one time step

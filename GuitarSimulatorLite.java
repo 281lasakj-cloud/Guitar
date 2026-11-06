@@ -22,7 +22,7 @@ public class GuitarSimulatorLite
             // check if the user has typed a key, and, if so, process it
             if (StdDraw.hasNextKeyTyped()) 
             {
-                // the user types this character
+                // the user types this characteraaaaa
                 char key = StdDraw.nextKeyTyped();
 
                 // pluck the corresponding string
