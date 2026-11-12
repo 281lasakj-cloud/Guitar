@@ -25,18 +25,17 @@ public class GuitarSimulator
             if(index != -1){
                 string[index].pluck();
             }
+        }
+        double sample = 0.0;
 
-            double sample = 0.0;
+        for (int i = 0; i < string.length; i++){
+            sample += string[i].sample();
+        }
 
-            for (int i = 0; i < string.length; i++){
-                sample += string[i].sample();
-            }
+        StdAudio.play(sample);
 
-            StdAudio.play(sample);
-
-            for(int i = 0; i < string.length; i++){
-                string[i].tic();
-            }
+        for(int i = 0; i < string.length; i++){
+            string[i].tic();
         }
     }
 
